@@ -33,6 +33,11 @@ app.get('/profile/:id',(req,res)=>{
     res.status(400).json('no user')
 })
 
+app.post('/login',(req,res)=>{
+
+  
+})
+
 app.put('/image',(req,res)=>{
     const {id} = req.body;
    let found = false;
@@ -62,6 +67,11 @@ app.post('/signin',(req,res)=>{
 
 app.post('/register',(req,res)=>{
     const {email,name,password} = req.body;
+
+    // bcrypt.hash(password, null, null, function(err, hash) {
+    //     // Store hash in your password DB.
+    // });
+
     database.users.push(
         {
             id :100,
