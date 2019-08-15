@@ -62,10 +62,11 @@ app.post('/signin',(req,res)=>{
     const user = database.users[0];
 
     if(email === user.email && password === user.password)
-    res.json('success');
+    res.json(user);
     else
     res.status(400).json(`error signing in`)
 })
+
 
 app.post('/register',(req,res)=>{
     const {email,name,password} = req.body;
@@ -79,7 +80,6 @@ app.post('/register',(req,res)=>{
             id :100,
             name : name,
             email : email,
-            password: password,
             entries : 0,
             joined : new Date()
         }
