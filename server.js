@@ -44,11 +44,10 @@ app.put('/image',(req,res)=>{
     const {id} = req.body;
    let found = false;
     const user  = database.users.map( user => {
-        console.log(id)
         if(user.id === id){
             user.entries++;
             found = true;
-            return res.json(user);
+            return res.json(user.entries);
         }
     
     });
